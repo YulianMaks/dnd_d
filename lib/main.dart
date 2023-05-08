@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-import 'mainScreen/name.dart';
-import 'stats/userStr.dart';
-import 'stats/userStat.dart';
-import 'models/user.dart';
+// import 'mainScreen/name.dart';
+// import 'stats/userStr.dart';
+// import 'stats/userStat.dart';
+// import 'models/user.dart';
 import 'screens/mainpage.dart';
+import 'screens/questpage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -37,17 +38,16 @@ class _HomePageState extends State<Homepage> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
-    Text(
-      'Index 1: To Do',
-      style: optionStyle,
-    ),
+    QuestPage(),
     Text(
       'Index 2: Daily',
       style: optionStyle,
     ),
   ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedPage = index;
