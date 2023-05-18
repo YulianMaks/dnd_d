@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
               onPressed: () {
                 print('settings key pressed');
               },
-              icon: Icon(Icons.settings),
+              icon: const Icon(Icons.settings),
             ),
           ],
         ),

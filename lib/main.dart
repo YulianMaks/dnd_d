@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 // import 'models/user.dart';
 import 'screens/mainpage.dart';
 import 'screens/questpage.dart';
+import 'screens/dailypage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -42,10 +43,7 @@ class _HomePageState extends State<Homepage> {
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     QuestPage(),
-    Text(
-      'Index 2: Daily',
-      style: optionStyle,
-    ),
+    DailyPage(),
   ];
 
   void _onItemTapped(int index) {

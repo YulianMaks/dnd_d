@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../models/quest.dart';
-import '../quests/quest_list.dart';
+import '../models/daily.dart';
+import '../daily/daily_list.dart';
 
-class QuestPage extends StatefulWidget {
-  const QuestPage({super.key});
+class DailyPage extends StatefulWidget {
+  const DailyPage({super.key});
 
   @override
-  State<QuestPage> createState() => _QuestPageState();
+  State<DailyPage> createState() => _DailyPageState();
 }
 
-class _QuestPageState extends State<QuestPage> {
-  final List<Quest> _addedQuest = [
-    Quest(name: "Go to gym", date: DateTime.now(), stat: Stat.str),
-    Quest(name: "Jogging", date: DateTime.now(), stat: Stat.dex),
-  ];
+final List<Daily> _addedDaily = [
+  Daily(name: "Brush teeth"),
+  Daily(name: "Breakfast"),
+];
 
+class _DailyPageState extends State<DailyPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.purple),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Quests"),
+          title: const Text("Dailies"),
           actions: [
             IconButton(
               onPressed: () {
@@ -32,15 +32,15 @@ class _QuestPageState extends State<QuestPage> {
             ),
           ],
         ),
-        body: QuestList(quests: _addedQuest),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        body: DailyList(dailies: _addedDaily),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             print('Add quest button');
           },
           // child: Icon(Icons.add),
-          icon: Icon(Icons.add),
-          label: Text('Add Quest'),
+          icon: const Icon(Icons.add),
+          label: const Text('Add Daily'),
         ),
       ),
     );
