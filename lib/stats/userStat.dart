@@ -1,12 +1,24 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
+enum Stat { str, dex, con, int, wis, cha }
+
+const nameOfStat = {
+  Stat.str: "STR",
+  Stat.dex: "DEX",
+  Stat.con: "CON",
+  Stat.int: "INT",
+  Stat.wis: "WIS",
+  Stat.cha: "CHA",
+};
+
 class UserStat extends StatefulWidget {
   // const UserStat({super.key});
   final String statName;
   final int statValue;
+  final Stat stat;
 
-  UserStat(this.statName, this.statValue);
+  UserStat(this.statName, this.statValue, this.stat);
 
   @override
   State<UserStat> createState() => _UserStatState();

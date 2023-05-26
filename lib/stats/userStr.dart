@@ -8,9 +8,8 @@ class UserStr extends StatefulWidget {
 }
 
 class _UserStrState extends State<UserStr> {
-  @override
   final _str = 12;
-
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Column(children: [

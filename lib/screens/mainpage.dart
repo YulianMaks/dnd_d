@@ -37,31 +37,31 @@ class _MainScreenState extends State<MainScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CharacterName('Sollin'),
+                // CharacterName('Sollin'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('STR', 12),
-                UserStat('DEX', 14),
+                UserStat('STR', 12, Stat.str),
+                UserStat('DEX', 14, Stat.dex),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('CON', 10),
-                UserStat('INT', 15),
+                UserStat('CON', 10, Stat.con),
+                UserStat('INT', 15, Stat.int),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('WIS', 9),
-                UserStat('CHA', 11),
+                UserStat('WIS', 9, Stat.wis),
+                UserStat('CHA', 11, Stat.cha),
               ],
             )
           ],

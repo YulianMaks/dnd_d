@@ -33,7 +33,7 @@ class _DailyPageState extends State<DailyPage> {
           ],
         ),
         body: DailyList(dailies: _addedDaily),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             print('Add quest button');
