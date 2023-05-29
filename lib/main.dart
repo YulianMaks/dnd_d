@@ -43,7 +43,7 @@ class _HomePageState extends State<Homepage> {
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     QuestPage(),
-    DailyPage(),
+    //DailyPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -72,10 +72,10 @@ class _HomePageState extends State<Homepage> {
             icon: Icon(Icons.star),
             label: 'To Do',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: 'Daily',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.calendar_month),
+          //   label: 'Daily',
+          // ),
         ],
         currentIndex: _selectedPage,
         selectedItemColor: Theme.of(context).primaryColorDark,

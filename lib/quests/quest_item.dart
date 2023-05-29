@@ -21,7 +21,7 @@ class QuestItem extends StatelessWidget {
                   },
                   icon: Icon(Icons.done_sharp)),
               SizedBox(
-                width: 5,
+                width: 15,
               ),
               Container(
                 width: 240,
@@ -54,11 +54,11 @@ class QuestItem extends StatelessWidget {
               SizedBox(
                 width: 3,
               ),
-              IconButton(
-                  onPressed: () {
-                    print('delete quest');
-                  },
-                  icon: Icon(Icons.delete)),
+              // IconButton(
+              //     onPressed: () {
+              //       print('delete quest');
+              //     },
+              //     icon: Icon(Icons.delete)),
             ],
           )),
     );

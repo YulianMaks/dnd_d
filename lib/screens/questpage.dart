@@ -17,15 +17,19 @@ class _QuestPageState extends State<QuestPage> {
     Quest(name: "Jogging", date: DateTime.now(), stat: Stat.dex),
   ];
 
-  // void _addNewQuest(String name, Stat stat) {
-  //   final newQuest = Quest(name: name, date: DateTime.now(), stat: stat);
+  void _addNewQuest(Quest quest) {
+    setState(() {
+      _addedQuest.add(quest);
+    });
+  }
 
-  //   setState(() {
-  //     _addedQuest.add(newQuest);
-  //   });
-  // }
+  void _deleteQuest(Quest quest) {
+    setState(() {
+      _addedQuest.remove(quest);
+      print(quest.stat);
+    });
+  }
 
-  //TODO modal screens
   void modalQuestFields(BuildContext ctx) {
     showModalBottomSheet(
         context: context,
@@ -34,12 +38,21 @@ class _QuestPageState extends State<QuestPage> {
           //     onTap: () {},
           //     behavior: HitTestBehavior.opaque,
           //     child: Text('loh'));
-          return NewQuest();
+          return NewQuest(onAddNewQuest: _addNewQuest);
         });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget questPageContent = const Center(
+      child: Text('У вас поки немає квестів. Додайте декілька!'),
+    );
+
+    if (_addedQuest.isNotEmpty) {
+      questPageContent =
+          QuestList(quests: _addedQuest, onDeleteQuest: _deleteQuest);
+    }
+
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.purple),
       home: Scaffold(
@@ -54,7 +67,7 @@ class _QuestPageState extends State<QuestPage> {
             ),
           ],
         ),
-        body: QuestList(quests: _addedQuest),
+        body: questPageContent,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {

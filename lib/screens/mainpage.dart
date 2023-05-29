@@ -44,24 +44,24 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('STR', 12, Stat.str),
-                UserStat('DEX', 14, Stat.dex),
+                UserStat('STR', 1, Stat.str),
+                UserStat('DEX', 1, Stat.dex),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('CON', 10, Stat.con),
-                UserStat('INT', 15, Stat.int),
+                UserStat('CON', 1, Stat.con),
+                UserStat('INT', 1, Stat.int),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserStat('WIS', 9, Stat.wis),
-                UserStat('CHA', 11, Stat.cha),
+                UserStat('WIS', 1, Stat.wis),
+                UserStat('CHA', 1, Stat.cha),
               ],
             )
           ],
