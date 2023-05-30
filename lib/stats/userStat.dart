@@ -39,7 +39,8 @@ class _UserStatState extends State<UserStat> {
         margin: EdgeInsets.all(40),
         child: Column(
           children: [
-            Text(widget.statName, style: TextStyle(fontSize: 15)),
+            Text(widget.stat.name.toUpperCase(),
+                style: TextStyle(fontSize: 15)),
             Text(widget.statValue.toString(), style: TextStyle(fontSize: 35)),
           ],
         ),

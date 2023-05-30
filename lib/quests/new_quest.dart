@@ -16,7 +16,7 @@ class NewQuest extends StatefulWidget {
 class _NewQuestState extends State<NewQuest> {
   final _nameController = TextEditingController();
   DateTime? _selectedDate;
-  Stat _selectedStat = Stat.str;
+  QuestStat _selectedStat = QuestStat.str;
 
   @override
   void dispose() {
@@ -71,6 +71,9 @@ class _NewQuestState extends State<NewQuest> {
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(
+            height: 40,
+          ),
           TextField(
             // onChanged: _saveQuestName,
             controller: _nameController,
@@ -86,7 +89,7 @@ class _NewQuestState extends State<NewQuest> {
             children: [
               DropdownButton(
                   value: _selectedStat,
-                  items: Stat.values
+                  items: QuestStat.values
                       .map(
                         (stat) => DropdownMenuItem(
                           value: stat,
@@ -109,7 +112,7 @@ class _NewQuestState extends State<NewQuest> {
                   onPressed: _questDatePicker,
                   icon: const Icon(Icons.calendar_today_outlined)),
               Text(_selectedDate == null
-                  ? 'Без дати'
+                  ? 'Виберіть дату'
                   : formatter.format(_selectedDate!)),
             ],
           ),

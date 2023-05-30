@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../models/quest.dart';
 
 class QuestItem extends StatelessWidget {
-  const QuestItem({super.key, required this.quest});
+  const QuestItem(
+      {super.key, required this.quest, required this.completeQuest});
   final Quest quest;
+  final Function(Quest quest) completeQuest;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class QuestItem extends StatelessWidget {
               IconButton(
                   onPressed: () {
                     print('complete quest');
+                    completeQuest(quest);
                   },
                   icon: Icon(Icons.done_sharp)),
               SizedBox(

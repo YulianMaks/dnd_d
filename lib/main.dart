@@ -35,52 +35,32 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomePageState extends State<Homepage> {
-  int _selectedPage = 0;
-
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    MainScreen(),
-    QuestPage(),
-    //DailyPage(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedPage = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // // appBar: AppBar(
-      // //   title: const Text('BottomNavigationBar Sample'),
-      // ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedPage),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'To Do',
-          ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.calendar_month),
-          //   label: 'Daily',
-          // ),
-        ],
-        currentIndex: _selectedPage,
-        selectedItemColor: Theme.of(context).primaryColorDark,
-        onTap: _onItemTapped,
-      ),
-    );
+    // return MaterialApp(
+    //   theme: ThemeData(primarySwatch: Colors.purple),
+    //   home: Scaffold(
+    //     appBar: AppBar(
+    //       title: const Text('Персонаж'),
+    //       actions: [
+    //         IconButton(
+    //           onPressed: () {
+    //             print('settings key pressed');
+    //           },
+    //           icon: const Icon(Icons.add),
+    //         ),
+    //       ],
+    //     ),
+    //     body: SingleChildScrollView(
+    //       child: Column(
+    //         children: [
+    //           MainScreen(),
+    //           // QuestPage(),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
+    return MainScreen();
   }
 }

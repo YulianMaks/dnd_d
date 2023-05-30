@@ -5,15 +5,15 @@ final formatter = DateFormat.MMMd();
 
 const uuid = Uuid();
 
-enum Stat { str, dex, con, int, wis, cha }
+enum QuestStat { str, dex, con, int, wis, cha }
 
 const nameOfStat = {
-  Stat.str: "STR",
-  Stat.dex: "DEX",
-  Stat.con: "CON",
-  Stat.int: "INT",
-  Stat.wis: "WIS",
-  Stat.cha: "CHA",
+  QuestStat.str: "STR",
+  QuestStat.dex: "DEX",
+  QuestStat.con: "CON",
+  QuestStat.int: "INT",
+  QuestStat.wis: "WIS",
+  QuestStat.cha: "CHA",
 };
 
 class Quest {
@@ -26,7 +26,7 @@ class Quest {
   final String name;
   final String id;
   final DateTime date;
-  final Stat stat;
+  final QuestStat stat;
 
   String get formattedDate {
     return formatter.format(date);
