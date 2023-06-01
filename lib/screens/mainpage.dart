@@ -8,6 +8,8 @@ import '../stats/userStat.dart';
 import '../quests/new_quest.dart';
 import '../models/quest.dart';
 import '../quests/quest_list.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../auth/auth.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,6 +19,23 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final User? user = Auth().currentUser;
+
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
+  Widget _userUid() {
+    return Text(user?.email ?? 'User email');
+  }
+
+  Widget _signOutButton() {
+    return ElevatedButton(
+      onPressed: signOut,
+      child: const Text('Sign out'),
+    );
+  }
+
   final List<Quest> _addedQuest = [
     Quest(name: "Go to gym", date: DateTime.now(), stat: QuestStat.str),
     Quest(name: "Jogging", date: DateTime.now(), stat: QuestStat.dex),
@@ -147,6 +166,10 @@ class _MainScreenState extends State<MainScreen> {
           title: const Text('Персонаж'),
           actions: [
             IconButton(
+              onPressed: signOut,
+              icon: const Icon(Icons.logout),
+            ),
+            IconButton(
               onPressed: () {
                 print('add quest key pressed');
                 modalQuestFields(context);
@@ -160,6 +183,7 @@ class _MainScreenState extends State<MainScreen> {
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // _signOutButton(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 // crossAxisAlignment: CrossAxisAlignment.start,

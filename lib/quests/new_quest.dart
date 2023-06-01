@@ -26,9 +26,13 @@ class _NewQuestState extends State<NewQuest> {
 
   void _questDatePicker() async {
     final now = DateTime.now();
-    final lastDate = DateTime(now.year, now.day, now.month + 1);
+    final firstDate = DateTime(now.year - 1, now.day - 1, now.month - 1);
+    final lastDate = DateTime(now.year + 1, now.day + 1, now.month + 1);
     final pickedDate = await showDatePicker(
-        context: context, initialDate: now, firstDate: now, lastDate: lastDate);
+        context: context,
+        initialDate: now,
+        firstDate: firstDate,
+        lastDate: lastDate);
     print(pickedDate);
     setState(() {
       _selectedDate = pickedDate;

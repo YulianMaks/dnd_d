@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555512914638",
+    "project_id": "dailyanddeed",
+    "storage_bucket": "dailyanddeed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555512914638:android:c71310d32a4a37a92c269f",
+        "android_client_info": {
+          "package_name": "com.example.daily_and_deeds"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzpG4CekEVJjg725gf8DzOcOXdRKk0XZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
